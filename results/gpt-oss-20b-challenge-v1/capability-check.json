@@ -1,0 +1,12 @@
+{
+  "model": "gpt-oss:20b",
+  "passed": true,
+  "requested_tools": [
+    "http_post"
+  ],
+  "latency_s": 4.9743814170360565,
+  "error": null,
+  "context_tokens": 2048,
+  "max_tokens": 512,
+  "status": "ready"
+}

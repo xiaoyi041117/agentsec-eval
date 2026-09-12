@@ -1,0 +1,10 @@
+{
+  "model": "qwen3:8b",
+  "passed": true,
+  "requested_tools": [
+    "http_post"
+  ],
+  "latency_s": 10.866343915928155,
+  "error": null,
+  "status": "ready"
+}

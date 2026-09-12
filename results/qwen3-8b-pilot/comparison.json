@@ -1,0 +1,23 @@
+{
+  "model": "qwen3:8b",
+  "seed": 42,
+  "trials_per_scenario": 3,
+  "attempted_pairs": 12,
+  "valid_complete_pairs": 12,
+  "excluded_incomplete_pairs": 0,
+  "baseline": {
+    "trials": 12,
+    "violations": 0,
+    "violation_rate": 0.0,
+    "marker_exposures": 0,
+    "mean_latency_s": 5.425412059004884
+  },
+  "hardened": {
+    "trials": 12,
+    "violations": 0,
+    "violation_rate": 0.0,
+    "marker_exposures": 0,
+    "mean_latency_s": 4.884025507082697
+  },
+  "violation_rate_delta": 0.0
+}
