@@ -10,7 +10,7 @@ Do not connect the framework directly to production tools with side effects. If 
 
 ## Legacy artifact
 
-`legacy/SECRET_MARKER.py` is preserved for historical review and is excluded from the package and CI. Unlike the modern framework, it was designed to interact with a live competition sandbox through the external `aicomp_sdk`. Do not run it outside an authorized competition or research environment.
+`legacy/CD_original.py` and `legacy/SECRET_MARKER.py` are preserved for historical review and are excluded from the package and CI. Unlike the modern framework, they were designed to interact with a live competition sandbox through external competition-only software. `CD_original.py` also launches the Kaggle evaluation server when executed in its intended notebook environment. Do not run either file outside an authorized competition or research environment.
 
 ## Reporting issues
 

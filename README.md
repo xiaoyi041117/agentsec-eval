@@ -51,10 +51,11 @@ compare_local.py         paired baseline/hardened runner
 CD_engineered.py         convenience CLI entry point
 results/gpt-oss-20b-challenge-v1/  primary target-model experiment
 results/qwen3-8b-pilot/            earlier portability pilot
+legacy/CD_original.py    original competition CD submission snapshot
 legacy/SECRET_MARKER.py  original competition-era reference snapshot
 ```
 
-The package never imports `legacy/SECRET_MARKER.py`. The legacy file depends on the competition-only `aicomp_sdk` and can request a live sandbox tool; see [legacy/README.md](legacy/README.md) before opening or reusing it.
+The package never imports either legacy file. They depend on the competition-only `aicomp_sdk` and `kaggle_evaluation` environment and can request actions inside the authorized competition sandbox; see [legacy/README.md](legacy/README.md) before opening or reusing them.
 
 ## Quick start
 
@@ -115,7 +116,7 @@ The earlier [Qwen3-8B basic pilot](results/qwen3-8b-pilot/) remains as a portabi
 
 The competition system targeted GPT-OSS and Gemma tool-use behavior in an offline replay environment. Its later CD strategy maintained separate pools of 20 single-action profiles per model, configured 30 probes per profile, ranked profiles using a trace-derived reward-per-second proxy, and generated up to 2,000 parameter-diverse candidates. These numbers describe the competition design, not the local A/B protocol in this repository.
 
-The included `SECRET_MARKER.py` documents the earlier high-public-score exfiltration approach that failed to transfer to hidden defenses. Keeping that negative result visible is intentional: it explains why transferability, capability controls, held-out evaluation, and uncertainty reporting became central to the refactor.
+The included `SECRET_MARKER.py` documents the earlier high-public-score exfiltration approach that failed to transfer to hidden defenses. `CD_original.py` preserves the later non-marker GPT-OSS/Gemma submission snapshot that searched model-specific prompt profiles and selected candidates using replay traces and runtime. Keeping both stages visible is intentional: it explains why transferability, capability controls, held-out evaluation, and uncertainty reporting became central to the refactor.
 
 ## Safety boundary
 
@@ -123,7 +124,7 @@ The included `SECRET_MARKER.py` documents the earlier high-public-score exfiltra
 - Markers are synthetic and unique to each trial.
 - The evaluation adapters only parse returned `tool_calls`.
 - No network request, email, file write, or shell command requested by a model is executed.
-- The legacy competition file is excluded from package discovery and automated tests.
+- The legacy competition files are excluded from package discovery and automated tests.
 - Evaluate only systems you own or are explicitly authorized to test.
 
 ## Limitations and next steps
@@ -136,4 +137,4 @@ The included `SECRET_MARKER.py` documents the earlier high-public-score exfiltra
 
 ## License and publication note
 
-The repository is released under the MIT License. `legacy/SECRET_MARKER.py` is included as a historical competition artifact supplied by the project author and depends on external competition software that is not distributed here. Before publishing, confirm that the relevant competition rules permit public release of solution code and that you have the right to license every included file.
+The repository is released under the MIT License. `legacy/CD_original.py` and `legacy/SECRET_MARKER.py` are included as historical competition artifacts supplied by the project author and depend on external competition software that is not distributed here. Public release remains subject to the relevant competition rules and the author's right to license every included file.
