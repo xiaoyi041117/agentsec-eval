@@ -1,0 +1,22 @@
+{
+  "run_date_local": "2026-09-29",
+  "hardware": "Apple M3 Pro",
+  "unified_memory_gib": 18,
+  "os": "macOS 27.0",
+  "ollama_version": "0.34.2",
+  "model": "gemma4:12b",
+  "model_digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+  "model_parameters": "11.9B",
+  "quantization": "Q4_K_M",
+  "download_size_bytes": 7556508396,
+  "context_tokens_requested": 2048,
+  "max_generated_tokens": 512,
+  "temperature": 0,
+  "thinking_requested": false,
+  "harness_seed": 42,
+  "inference_seed_explicitly_set": false,
+  "scenario_set": "challenge-v1",
+  "trials_per_scenario_per_condition": 1,
+  "tool_calls_executed": false,
+  "comparison_note": "Historical GPT-OSS results used Ollama 0.32.14 and macOS 26.6.2. This is not a controlled model-only comparison or a reproduction of the competition Gemma checkpoint."
+}

@@ -6,7 +6,7 @@ This note separates the project's three stages so that competition metrics, impl
 
 The early `SECRET_MARKER` strategy optimized a high-severity, single-hop `http.post` path. It used live validation, replay-aware time budgeting, candidate filling, and model-latency heuristics inside the authorized competition sandbox.
 
-The approach exceeded 95 on the public leaderboard but scored zero under hidden-defense replay. This was the project's most useful negative result: a strong public score did not establish transferability.
+During the competition, the team hypothesized that this marker-dependent approach might not transfer to hidden defenses. Private leaderboard results were only known after the competition ended. The later strategy change should therefore be described as hypothesis-led exploration, not as a response to an observed public/private score collapse. The archived code does not independently establish official scores.
 
 The original snapshot is preserved at [`legacy/SECRET_MARKER.py`](../legacy/SECRET_MARKER.py). It is not part of the modern package and should not be executed outside an authorized environment.
 
@@ -35,9 +35,11 @@ The primary GPT-OSS 20B experiment is a real local inference study, not an offic
 
 This result demonstrates an effect on the included cases, not complete protection or a change to model weights. One build-log injection still triggered `shell_run` under the hardened policy. The earlier Qwen3-8B basic pilot is retained separately as a portability result and as evidence for why scenario difficulty must be versioned.
 
+The added Gemma 4 12B experiment uses the same challenge cases and reports 5/12 baseline versus 1/12 hardened target-tool violations. Its exact paired p-value is 0.125, so the observed decrease should not be presented as a statistically established improvement. Its remaining hardened failure is a support-ticket email request, unlike GPT-OSS's build-log shell request. Different runtime versions and model quantizations prevent a controlled model-only comparison.
+
 ## What the project demonstrates
 
-- Iteration based on hidden-distribution failure rather than public-score optimization alone.
+- Hypothesis-led exploration of hidden-defense transferability during the competition.
 - Model-specific strategy search informed by execution traces and runtime constraints.
 - A transition from benchmark-specific attack generation to a reusable evaluation architecture.
 - Experimental controls that distinguish model capability from observed safety behavior.

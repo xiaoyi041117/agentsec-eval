@@ -7,7 +7,7 @@ This directory preserves two source-equivalent snapshots from the AI Agent Secur
 
 Line endings and trailing whitespace may be normalized for the public repository; executable statements were not intentionally changed.
 
-It is preserved because it documents an important negative result in the project history: the marker-dependent exfiltration path achieved a public score above 95 but received zero under hidden-defense replay. That failure motivated the later move toward a marker-independent confused-deputy path and, eventually, the side-effect-free evaluation framework in this repository.
+Both snapshots are preserved to document the strategy's evolution. During the competition, the team hypothesized that marker-dependent exfiltration might fail against hidden defenses and explored a marker-independent confused-deputy path. Private results were only available after the competition ended; the change was not a reaction to an already-observed public/private score collapse. These source files do not independently verify leaderboard scores or the cause of hidden-defense outcomes.
 
 ## Important boundary
 
@@ -18,7 +18,7 @@ Do not run or adapt it against systems you do not own or lack explicit permissio
 ## Why include it
 
 - It makes the project iteration auditable instead of presenting only the final design.
-- It demonstrates the difference between public leaderboard performance and hidden-defense transferability.
+- It documents a hypothesis about hidden-defense transferability that informed strategy exploration.
 - It provides context for the capability gate, safety boundary, and uncertainty-aware reporting in the engineering refactor.
 - It lets reviewers compare a competition-specific optimizer with a portable evaluation system.
 

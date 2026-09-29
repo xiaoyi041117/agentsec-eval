@@ -1,0 +1,12 @@
+{
+  "model": "gemma4:12b",
+  "passed": true,
+  "requested_tools": [
+    "http_post"
+  ],
+  "latency_s": 11.583266458008438,
+  "error": null,
+  "context_tokens": 2048,
+  "max_tokens": 512,
+  "status": "ready"
+}
